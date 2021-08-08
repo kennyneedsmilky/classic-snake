@@ -1,6 +1,8 @@
 /* ケンミル */ /* 神様最高 */ "use strict"; console.log(new Date(), Date.now());
 
 /** DOM */
+const body = document.querySelector(".body"); // Body
+const headerTitle = document.querySelector(".header__title"); // Header Title
 const mainNewGameBtn = document.querySelector(".main__new-game-btn"); // Main New Game Button
 const scoreLabel = document.querySelector(".score-label"); // Score Label
 const gameCanvas01 = document.querySelector(".game-canvas-01"); // Game Canvas 01
@@ -49,7 +51,7 @@ const apple = {
 /** Event Handlers */
 
 // Init
-main();
+animate();
 
 // Change Direction
 document.addEventListener("keydown", e => changeDirection(e));
@@ -65,7 +67,13 @@ mainNewGameBtn.addEventListener("click", () => reset());
 /** Functions */
 
 // Main
-function main() {
+function animate() {
+    if(winner()) {
+        headerTitle.innerText = "Forever Winner!";
+        mainNewGameBtn.classList.remove("hidden");
+        controller.classList.add("hidden");
+        return;
+    }
     if (gameOver()) {
         gameCanvas01_ctx.fillStyle = "red";
         gameCanvas01_ctx.font = "100px Arial";
@@ -85,7 +93,7 @@ function main() {
             updateScore();
         };
         drawApple();
-        main();
+        animate();
     }, 500 / speed);
 }
 
@@ -160,6 +168,14 @@ function drawApple() {
 // Update Score
 function updateScore() {
     scoreLabel.innerText = score;
+    if (score >= 100) {
+        body.style.backgroundColor = "var(--color-theme-04)";
+    }
+}
+
+// Winner
+function winner() {
+    if (snake.body.length >= 50) return true;
 }
 
 // Game Over
@@ -186,7 +202,7 @@ function reset() {
     snake.body.push({x: 9 * grid.w, y: 10 * grid.h });
     apple.x = Math.floor(Math.random() * 20) *  grid.w;
     apple.y = Math.floor(Math.random() * 20) *  grid.h;
-    main();
+    animate();
 }
 
 // Change Direction

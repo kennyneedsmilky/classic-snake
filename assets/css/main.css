@@ -4,6 +4,7 @@
   --color-theme-01: #ffffff;
   --color-theme-02: #808080;
   --color-theme-03: #000000;
+  --color-theme-04: #9e8702;
   /* Padding */
   --padding-default: 0.25rem;
   /* Border */
@@ -62,7 +63,7 @@ body {
 .main__new-game-btn {
   padding: var(--padding-default);
   border: none;
-  background-color: white;
+  background-color: var(--color-theme-01);
   box-shadow: var(--shadow-default);
   margin: var(--margin-default);
   font-size: 2rem;
@@ -88,9 +89,16 @@ body {
 }
 
 .footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   padding: var(--padding-default);
   margin: var(--margin-default);
   text-align: center;
+}
+
+.footer__logo {
+  height: 64px;
 }
 
 .controller {
