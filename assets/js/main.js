@@ -192,10 +192,12 @@ function reset() {
 // Change Direction
 function changeDirection(e) {
     let keyPressed = e.keyCode;
-    if (e.classList.contains("--btn-up")) keyPressed = 38;
-    if (e.classList.contains("--btn-down")) keyPressed = 40;
-    if (e.classList.contains("--btn-left")) keyPressed = 37;
-    if (e.classList.contains("--btn-right")) keyPressed = 39;
+    if (e.classList !== undefined) {
+        if (e.classList.contains("--btn-up")) keyPressed = 38;
+        if (e.classList.contains("--btn-down")) keyPressed = 40;
+        if (e.classList.contains("--btn-left")) keyPressed = 37;
+        if (e.classList.contains("--btn-right")) keyPressed = 39;
+    }
     const LEFT_KEY = 37;
     const RIGHT_KEY = 39;
     const UP_KEY = 38;
