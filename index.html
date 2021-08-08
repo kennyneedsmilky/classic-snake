@@ -1,0 +1,45 @@
+<!-- ケンミル --> <!-- 神様最高 -->
+<!DOCTYPE html>
+<html lang="en">
+    <!-- メタ情報 -->
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0 user-scalable=no">
+        <!-- CSSファイルのリンクです。内部の場合は <style></style> に置き換えます。 -->
+        <link rel="stylesheet" type="text/css" href="assets/css/main.css">
+        <!-- JSファイルのリンク。内部の場合はv<script></script> に置き換えます。 -->
+        <script defer src="assets/js/main.js"></script>
+        <!-- ファビコン -->
+        <link rel="shortcut icon" href="#">
+        <title>Classic Snake</title>
+    </head>
+    <!-- アプリのマークアップ -->
+    <body>
+        
+        <!-- ヘッダー -->
+        <header class="header">
+            <h1>Classic Snake</h1>
+            <h3>Score: <span class="score-label">0</span></h3>
+        </header>
+        
+        <!-- メイン -->
+        <main class="main">
+            <canvas class="game-canvas-01" width="1000" height="1000"></canvas>
+            <button class="main__new-game-btn hidden">New Game</button>
+        </main>
+        
+        <!-- フッター -->
+        <footer class="footer">
+            <h2>&copy; 2021 KenMil</h2>
+        </footer>
+
+        <!-- Controller -->
+        <div class="controller">
+            <button class="controller__btn --btn-up">↑</button>
+            <button class="controller__btn --btn-down">↓</button>
+            <button class="controller__btn --btn-left">←</button>
+            <button class="controller__btn --btn-right">→</button>
+        </div>
+    </body>
+</html>
+<!-- HTMLの終わり。 -->

@@ -1,0 +1,178 @@
+/* ケンミル */ /* 神様最高 */
+:root {
+  /* Colors */
+  --color-theme-01: #ffffff;
+  --color-theme-02: #808080;
+  --color-theme-03: #000000;
+  /* Padding */
+  --padding-default: 0.25rem;
+  /* Border */
+  --border-default: 1px solid #ffffff;
+  /* Shadows */
+  --shadow-default: 5px 5px 5px #00000080;
+  /* Margin */
+  --margin-default: 0.25rem;
+  /* Font */
+  --font-family-default: Arial, Helvetica, sans-serif;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  outline: none;
+  font-family: var(--font-family-default);
+}
+
+h1,
+h2 {
+  padding: var(--padding-default);
+  margin: var(--margin-default);
+}
+
+button {
+  cursor: pointer;
+}
+
+/* ボディー */
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--color-theme-02);
+  height: 100vh;
+  color: var(--color-theme-01);
+}
+
+.header {
+  padding: var(--padding-default);
+  margin: var(--margin-default);
+  text-align: center;
+}
+
+.main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.main__new-game-btn {
+  padding: var(--padding-default);
+  border: none;
+  background-color: white;
+  box-shadow: var(--shadow-default);
+  margin: var(--margin-default);
+  font-size: 2rem;
+}
+
+.main__new-game-btn:hover,
+.main__new-game-btn:active {
+  background-color: var(--color-theme-03);
+  color: var(--color-theme-01);
+}
+
+.main__new-game-btn:active {
+  transform: scale(0.9);
+}
+
+.game-canvas-01 {
+  padding: var(--padding-default);
+  border: var(--border-default);
+  background-color: var(--color-theme-03);
+  box-shadow: var(--shadow-default);
+  margin: var(--margin-default);
+  width: 500px;
+}
+
+.footer {
+  padding: var(--padding-default);
+  margin: var(--margin-default);
+  text-align: center;
+}
+
+.controller {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  border: none;
+  border-radius: 50%;
+  background-color: var(--color-theme-03);
+  width: 150px;
+  height: 150px;
+}
+
+.controller__btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  border: none;
+  border-radius: 15px;
+  background-color: var(--color-theme-01);
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.controller__btn:active {
+  background-color: var(--color-theme-02);
+}
+
+.--btn-up {
+  top: 0;
+}
+
+.--btn-down {
+  bottom: 0;
+}
+
+.--btn-left {
+  left: 0;
+}
+
+.--btn-right {
+  right: 0;
+}
+
+/* このクラスを使用すれば、物事を非表示にします。 */
+.hidden {
+  display: none;
+}
+
+@media only screen and (max-width: 700px) {
+  .game-canvas-01 {
+    width: 300px;
+  }
+  .controller {
+    display: flex;
+    transform: scale(0.7);
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .game-canvas-01 {
+    width: 300px;
+  }
+  .controller {
+    display: flex;
+    transform: scale(1);
+  }
+}
+
+@media only screen and (max-width: 500px) {
+  .game-canvas-01 {
+    width: 250px;
+  }
+}
+
+@media only screen and (max-width: 350px) {
+  .game-canvas-01 {
+    width: 50%;
+  }
+}
