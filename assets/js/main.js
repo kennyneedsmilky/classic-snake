@@ -5,6 +5,7 @@ const mainNewGameBtn = document.querySelector(".main__new-game-btn"); // Main Ne
 const scoreLabel = document.querySelector(".score-label"); // Score Label
 const gameCanvas01 = document.querySelector(".game-canvas-01"); // Game Canvas 01
 const gameCanvas01_ctx = gameCanvas01.getContext("2d"); // Game Canvas 01 ctx
+const controller = document.querySelector(".controller"); // Controller
 const controllerBtns = document.querySelectorAll(".controller__btn"); // Controller Buttons
 
 // We want the canvas to have a width of 500px and a height of 500px.
@@ -72,6 +73,7 @@ function main() {
         gameCanvas01_ctx.textAlign = "middle";
         gameCanvas01_ctx.fillText("Game Over", 500, 500);
         mainNewGameBtn.classList.remove("hidden");
+        controller.classList.add("hidden");
         return;
     }
     setTimeout(() => {
@@ -176,6 +178,7 @@ function gameOver() {
 // Reset
 function reset() {
     mainNewGameBtn.classList.add("hidden");
+    controller.classList.remove("hidden");
     speed = 1;
     score = 0;
     scoreLabel.innerText = 0;
