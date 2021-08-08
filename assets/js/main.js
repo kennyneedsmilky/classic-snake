@@ -170,7 +170,6 @@ function gameOver() {
     };
     // Check to see if hit a wall.
     if (snake.body[0].x < 0 || snake.body[0].x > gameCanvas01.width - grid.w || snake.body[0].y < 0 || snake.body[0].y > gameCanvas01.height - grid.h) {
-        console.log("You hit a wall!");
         return true;
     }
 }
